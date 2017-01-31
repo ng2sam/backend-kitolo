@@ -7,7 +7,7 @@ import { schema } from './model'
 export Promotion, { schema } from './model'
 
 const router = new Router()
-const { productName, category, releaseDate, endDate, description, basePrice, users, discount, minNbContributor, img } = schema.tree
+const { productName, slug, category, releaseDate, endDate, description, basePrice, users, discount, minNbContributor, img } = schema.tree
 
 /**
  * @api {post} /promotions Create promotion
@@ -17,6 +17,7 @@ const { productName, category, releaseDate, endDate, description, basePrice, use
  * @apiParam {String} access_token admin access token.
  * @apiParam productName Promotion's productName.
  * @apiParam category Promotion's category.
+ * @apiParam slug Promotion's slug.
  * @apiParam releaseDate Promotion's releaseDate.
  * @apiParam endDate Promotion's endDate.
  * @apiParam description Promotion's description.
@@ -32,7 +33,7 @@ const { productName, category, releaseDate, endDate, description, basePrice, use
  */
 router.post('/',
   token({ required: true, roles: ['admin'] }),
-  body({ productName, category, releaseDate, endDate, description, basePrice, users, discount, minNbContributor, img }),
+  body({ productName, slug, category, releaseDate, endDate, description, basePrice, users, discount, minNbContributor, img }),
   create)
 
 /**
@@ -48,14 +49,14 @@ router.get('/',
   index)
 
 /**
- * @api {get} /promotions/:id Retrieve promotion
+ * @api {get} /promotions/:slug Retrieve promotion
  * @apiName RetrievePromotion
  * @apiGroup Promotion
  * @apiSuccess {Object} promotion Promotion's data.
  * @apiError {Object} 400 Some parameters may contain invalid values.
  * @apiError 404 Promotion not found.
  */
-router.get('/:id',
+router.get('/:slug',
   show)
 
 /**

@@ -4,6 +4,10 @@ const promotionSchema = new Schema({
   productName: {
     type: String
   },
+  slug: {
+    type: String,
+    unique: true
+  },
   category: {
     type: Schema.ObjectId,
     ref: 'Category',
@@ -45,6 +49,7 @@ promotionSchema.methods = {
       // simple view
       id: this.id,
       productName: this.productName,
+      slug: this.slug,
       category: this.category.view(full),
       releaseDate: this.releaseDate,
       endDate: this.endDate,

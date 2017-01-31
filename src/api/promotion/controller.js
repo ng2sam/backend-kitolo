@@ -21,7 +21,7 @@ export const index = ({ querymen: { query, select, cursor } }, res, next) =>
     .then(success(res))
     .catch(next)
 export const show = ({ params }, res, next) =>
-  Promotion.findById(params.id)
+  Promotion.find({slug: params.slug})
     .populate('user')
     .populate('category')
     .then(notFound(res))
