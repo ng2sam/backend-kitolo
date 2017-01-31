@@ -2,8 +2,8 @@ import _ from 'lodash'
 import { success, notFound } from '../../services/response/'
 import { Promotion } from '.'
 
-export const create = ({ users, category, bodymen: { body } }, res, next) =>
-  Promotion.create(...body, users, category)
+export const create = ({ bodymen: { body } }, res, next) =>
+  Promotion.create(body)
     .then((promotion) => promotion.view(true))
     .then(success(res, 201))
     .catch(next)
