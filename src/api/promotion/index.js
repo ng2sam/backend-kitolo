@@ -7,8 +7,7 @@ import { schema } from './model'
 export Promotion, { schema } from './model'
 
 const router = new Router()
-// const { productName, category, releaseDate, endDate, description, basePrice, users, discount, minNbContributor, img } = schema.tree
-const { productName, releaseDate, endDate, description, basePrice, discount, minNbContributor, img } = schema.tree
+const { productName, category, releaseDate, endDate, description, basePrice, users, discount, minNbContributor, img } = schema.tree
 
 /**
  * @api {post} /promotions Create promotion
@@ -17,10 +16,12 @@ const { productName, releaseDate, endDate, description, basePrice, discount, min
  * @apiPermission admin
  * @apiParam {String} access_token admin access token.
  * @apiParam productName Promotion's productName.
+ * @apiParam category Promotion's category.
  * @apiParam releaseDate Promotion's releaseDate.
  * @apiParam endDate Promotion's endDate.
  * @apiParam description Promotion's description.
  * @apiParam basePrice Promotion's basePrice.
+ * @apiParam users Promotion's users.
  * @apiParam discount Promotion's discount.
  * @apiParam minNbContributor Promotion's minNbContributor.
  * @apiParam img Promotion's img.
@@ -31,7 +32,7 @@ const { productName, releaseDate, endDate, description, basePrice, discount, min
  */
 router.post('/',
   token({ required: true, roles: ['admin'] }),
-  body({ productName, releaseDate, endDate, description, basePrice, discount, minNbContributor, img }),
+  body({ productName, category, releaseDate, endDate, description, basePrice, users, discount, minNbContributor, img }),
   create)
 
 /**
@@ -64,10 +65,12 @@ router.get('/:id',
  * @apiPermission admin
  * @apiParam {String} access_token admin access token.
  * @apiParam productName Promotion's productName.
+ * @apiParam category Promotion's category.
  * @apiParam releaseDate Promotion's releaseDate.
  * @apiParam endDate Promotion's endDate.
  * @apiParam description Promotion's description.
  * @apiParam basePrice Promotion's basePrice.
+ * @apiParam users Promotion's users.
  * @apiParam discount Promotion's discount.
  * @apiParam minNbContributor Promotion's minNbContributor.
  * @apiParam img Promotion's img.
@@ -78,7 +81,7 @@ router.get('/:id',
  */
 router.put('/:id',
   token({ required: true, roles: ['admin'] }),
-  body({ productName, releaseDate, endDate, description, basePrice, discount, minNbContributor, img }),
+  body({ productName, category, releaseDate, endDate, description, basePrice, users, discount, minNbContributor, img }),
   update)
 
 /**
