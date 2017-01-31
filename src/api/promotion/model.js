@@ -50,7 +50,7 @@ promotionSchema.methods = {
       endDate: this.endDate,
       description: this.description,
       basePrice: this.basePrice,
-      users: this.user.view(full),
+      users: this.users,
       discount: this.discount,
       minNbContributor: this.minNbContributor,
       img: this.img,
