@@ -33,7 +33,7 @@ const { productName, releaseDate, endDate, description, category, basePrice, dis
  */
 router.post('/',
   token({ required: true, roles: ['admin'] }),
-  body({ productName, releaseDate, endDate, description, basePrice, discount, minNbContributor, img }),
+  body({ productName, releaseDate, endDate, description, category, basePrice, discount, minNbContributor, img }),
   create)
 
 /**
