@@ -8,7 +8,7 @@ export Promotion, { schema } from './model'
 
 const router = new Router()
 // const { productName, category, releaseDate, endDate, description, basePrice, users, discount, minNbContributor, img } = schema.tree
-const { productName, releaseDate, endDate, description, basePrice, discount, minNbContributor, img } = schema.tree
+const { productName, releaseDate, endDate, description, category, basePrice, discount, minNbContributor, img } = schema.tree
 
 /**
  * @api {post} /promotions Create promotion
@@ -82,7 +82,7 @@ router.get('/:id',
  */
 router.put('/:id',
   token({ required: true, roles: ['admin'] }),
-  body({ productName, releaseDate, endDate, description, basePrice, discount, minNbContributor, img }),
+  body({ productName, releaseDate, endDate, category, description, basePrice, discount, minNbContributor, img }),
   update)
 
 /**
