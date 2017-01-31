@@ -21,8 +21,8 @@ export const index = ({ querymen: { query, select, cursor } }, res, next) =>
     .then(success(res))
     .catch(next)
 export const show = ({ params }, res, next) =>
-  Promotion.find({slug: params.slug})
-    // .populate('user')
+  Promotion.findOne({slug: params.slug})
+    .populate('user')
     .populate('category')
     .then(notFound(res))
     .then((promotion) => promotion ? promotion.view() : null)
