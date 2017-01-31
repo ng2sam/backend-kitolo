@@ -19,6 +19,20 @@
 	- [Submit password](#submit-password)
 	- [Verify token](#verify-token)
 	
+- [Proposition](#proposition)
+	- [Create proposition](#create-proposition)
+	- [Delete proposition](#delete-proposition)
+	- [Retrieve proposition](#retrieve-proposition)
+	- [Retrieve propositions](#retrieve-propositions)
+	- [Update proposition](#update-proposition)
+	
+- [Provider](#provider)
+	- [Create provider](#create-provider)
+	- [Delete provider](#delete-provider)
+	- [Retrieve provider](#retrieve-provider)
+	- [Retrieve providers](#retrieve-providers)
+	- [Update provider](#update-provider)
+	
 - [User](#user)
 	- [Create user](#create-user)
 	- [Delete user](#delete-user)
@@ -182,6 +196,172 @@
 
 	GET /password-resets/:token
 
+
+# Proposition
+
+## Create proposition
+
+
+
+	POST /propositions
+
+
+### Parameters
+
+| Name    | Type      | Description                          |
+|---------|-----------|--------------------------------------|
+| access_token			| String			|  <p>user access token.</p>							|
+| name			| 			|  <p>Proposition's name.</p>							|
+| description			| 			|  <p>Proposition's description.</p>							|
+| img			| 			|  <p>Proposition's img.</p>							|
+
+## Delete proposition
+
+
+
+	DELETE /propositions/:id
+
+
+### Parameters
+
+| Name    | Type      | Description                          |
+|---------|-----------|--------------------------------------|
+| access_token			| String			|  <p>admin access token.</p>							|
+
+## Retrieve proposition
+
+
+
+	GET /propositions/:id
+
+
+### Parameters
+
+| Name    | Type      | Description                          |
+|---------|-----------|--------------------------------------|
+| access_token			| String			|  <p>admin access token.</p>							|
+
+## Retrieve propositions
+
+
+
+	GET /propositions
+
+
+### Parameters
+
+| Name    | Type      | Description                          |
+|---------|-----------|--------------------------------------|
+| access_token			| String			|  <p>admin access token.</p>							|
+| q			| String			| **optional** <p>Query to search.</p>							|
+| page			| Number			| **optional** <p>Page number.</p>							|
+| limit			| Number			| **optional** <p>Amount of returned items.</p>							|
+| sort			| String[]			| **optional** <p>Order of returned items.</p>							|
+| fields			| String[]			| **optional** <p>Fields to be returned.</p>							|
+
+## Update proposition
+
+
+
+	PUT /propositions/:id
+
+
+### Parameters
+
+| Name    | Type      | Description                          |
+|---------|-----------|--------------------------------------|
+| access_token			| String			|  <p>admin access token.</p>							|
+| name			| 			|  <p>Proposition's name.</p>							|
+| description			| 			|  <p>Proposition's description.</p>							|
+| img			| 			|  <p>Proposition's img.</p>							|
+
+# Provider
+
+## Create provider
+
+
+
+	POST /providers
+
+
+### Parameters
+
+| Name    | Type      | Description                          |
+|---------|-----------|--------------------------------------|
+| access_token			| String			|  <p>admin access token.</p>							|
+| shopName			| 			|  <p>Provider's shopName.</p>							|
+| contact			| 			|  <p>Provider's contact.</p>							|
+| email			| 			|  <p>Provider's email.</p>							|
+| tel			| 			|  <p>Provider's tel.</p>							|
+| adress			| 			|  <p>Provider's adress.</p>							|
+| npa			| 			|  <p>Provider's npa.</p>							|
+| city			| 			|  <p>Provider's city.</p>							|
+| promotions			| 			|  <p>Provider's promotions.</p>							|
+
+## Delete provider
+
+
+
+	DELETE /providers/:id
+
+
+### Parameters
+
+| Name    | Type      | Description                          |
+|---------|-----------|--------------------------------------|
+| access_token			| String			|  <p>admin access token.</p>							|
+
+## Retrieve provider
+
+
+
+	GET /providers/:id
+
+
+### Parameters
+
+| Name    | Type      | Description                          |
+|---------|-----------|--------------------------------------|
+| access_token			| String			|  <p>admin access token.</p>							|
+
+## Retrieve providers
+
+
+
+	GET /providers
+
+
+### Parameters
+
+| Name    | Type      | Description                          |
+|---------|-----------|--------------------------------------|
+| access_token			| String			|  <p>admin access token.</p>							|
+| q			| String			| **optional** <p>Query to search.</p>							|
+| page			| Number			| **optional** <p>Page number.</p>							|
+| limit			| Number			| **optional** <p>Amount of returned items.</p>							|
+| sort			| String[]			| **optional** <p>Order of returned items.</p>							|
+| fields			| String[]			| **optional** <p>Fields to be returned.</p>							|
+
+## Update provider
+
+
+
+	PUT /providers/:id
+
+
+### Parameters
+
+| Name    | Type      | Description                          |
+|---------|-----------|--------------------------------------|
+| access_token			| String			|  <p>admin access token.</p>							|
+| shopName			| 			|  <p>Provider's shopName.</p>							|
+| contact			| 			|  <p>Provider's contact.</p>							|
+| email			| 			|  <p>Provider's email.</p>							|
+| tel			| 			|  <p>Provider's tel.</p>							|
+| adress			| 			|  <p>Provider's adress.</p>							|
+| npa			| 			|  <p>Provider's npa.</p>							|
+| city			| 			|  <p>Provider's city.</p>							|
+| promotions			| 			|  <p>Provider's promotions.</p>							|
 
 # User
 

@@ -3,6 +3,9 @@ import user from './user'
 import auth from './auth'
 import passwordReset from './password-reset'
 import category from './category'
+import provider from './provider'
+import proposition from './proposition'
+import promotion from './promotion'
 
 const router = new Router()
 
@@ -33,5 +36,8 @@ router.use('/users', user)
 router.use('/auth', auth)
 router.use('/password-resets', passwordReset)
 router.use('/categories', category)
+router.use('/providers', provider)
+router.use('/propositions', proposition)
+router.use('/promotions', promotion)
 
 export default router
