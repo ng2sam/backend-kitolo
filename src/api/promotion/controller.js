@@ -3,7 +3,7 @@ import { success, notFound } from '../../services/response/'
 import { Promotion } from '.'
 
 export const create = ({ users, category, bodymen: { body } }, res, next) =>
-  Promotion.create(body, users, category)
+  Promotion.create(...body, users, category)
     .then((promotion) => promotion.view(true))
     .then(success(res, 201))
     .catch(next)

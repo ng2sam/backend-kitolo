@@ -19,6 +19,13 @@
 	- [Submit password](#submit-password)
 	- [Verify token](#verify-token)
 	
+- [Promotion](#promotion)
+	- [Create promotion](#create-promotion)
+	- [Delete promotion](#delete-promotion)
+	- [Retrieve promotion](#retrieve-promotion)
+	- [Retrieve promotions](#retrieve-promotions)
+	- [Update promotion](#update-promotion)
+	
 - [Proposition](#proposition)
 	- [Create proposition](#create-proposition)
 	- [Delete proposition](#delete-proposition)
@@ -196,6 +203,91 @@
 
 	GET /password-resets/:token
 
+
+# Promotion
+
+## Create promotion
+
+
+
+	POST /promotions
+
+
+### Parameters
+
+| Name    | Type      | Description                          |
+|---------|-----------|--------------------------------------|
+| access_token			| String			|  <p>admin access token.</p>							|
+| productName			| 			|  <p>Promotion's productName.</p>							|
+| category			| 			|  <p>Promotion's category.</p>							|
+| releaseDate			| 			|  <p>Promotion's releaseDate.</p>							|
+| endDate			| 			|  <p>Promotion's endDate.</p>							|
+| description			| 			|  <p>Promotion's description.</p>							|
+| basePrice			| 			|  <p>Promotion's basePrice.</p>							|
+| users			| 			|  <p>Promotion's users.</p>							|
+| discount			| 			|  <p>Promotion's discount.</p>							|
+| minNbContributor			| 			|  <p>Promotion's minNbContributor.</p>							|
+| img			| 			|  <p>Promotion's img.</p>							|
+
+## Delete promotion
+
+
+
+	DELETE /promotions/:id
+
+
+### Parameters
+
+| Name    | Type      | Description                          |
+|---------|-----------|--------------------------------------|
+| access_token			| String			|  <p>admin access token.</p>							|
+
+## Retrieve promotion
+
+
+
+	GET /promotions/:id
+
+
+## Retrieve promotions
+
+
+
+	GET /promotions
+
+
+### Parameters
+
+| Name    | Type      | Description                          |
+|---------|-----------|--------------------------------------|
+| q			| String			| **optional** <p>Query to search.</p>							|
+| page			| Number			| **optional** <p>Page number.</p>							|
+| limit			| Number			| **optional** <p>Amount of returned items.</p>							|
+| sort			| String[]			| **optional** <p>Order of returned items.</p>							|
+| fields			| String[]			| **optional** <p>Fields to be returned.</p>							|
+
+## Update promotion
+
+
+
+	PUT /promotions/:id
+
+
+### Parameters
+
+| Name    | Type      | Description                          |
+|---------|-----------|--------------------------------------|
+| access_token			| String			|  <p>admin access token.</p>							|
+| productName			| 			|  <p>Promotion's productName.</p>							|
+| category			| 			|  <p>Promotion's category.</p>							|
+| releaseDate			| 			|  <p>Promotion's releaseDate.</p>							|
+| endDate			| 			|  <p>Promotion's endDate.</p>							|
+| description			| 			|  <p>Promotion's description.</p>							|
+| basePrice			| 			|  <p>Promotion's basePrice.</p>							|
+| users			| 			|  <p>Promotion's users.</p>							|
+| discount			| 			|  <p>Promotion's discount.</p>							|
+| minNbContributor			| 			|  <p>Promotion's minNbContributor.</p>							|
+| img			| 			|  <p>Promotion's img.</p>							|
 
 # Proposition
 
